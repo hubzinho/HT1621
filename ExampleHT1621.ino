@@ -2,6 +2,8 @@
 
 HT1621 lcd; // create an "lcd" object
 
+int i;
+
 
 void setup() {
 
@@ -15,23 +17,18 @@ void setup() {
 
 void loop() {
 
-    lcd.print(1234, 1, 2);
+    lcd.print(107.2, 1, 1);
+    lcd.print(1234, 2, 0);
 
     lcd.Symbol(1);
+    lcd.Symbol(2);
+
+    i++;
+    lcd.setLevel(i); //0 to 13
+    delay(500);
+    if (i > 17) i = 0;
 
 //===========for the bars===========
-    int i;
- for ( i = 0; i <= 17; i++){  
-  lcd.setLevel(i);
   
-  delay(500);
- }
-
- for (i = 16; i > 0; i--){
-    lcd.setLevel(i);   
-  delay(500);
- 
-  
- }
 
 }
